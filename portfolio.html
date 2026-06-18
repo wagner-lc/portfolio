@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wagner Cardoso - Portfólio</title>
+    </head>
+    <body>
+        
+        <header class="hero">
+            <h1>Wagner Cardoso</h1>
+            <p>Desenvolvedor Web</p>
+
+            <div class="hero-links">
+                <a href="#projects">Projetos</a>
+                <a href="https://github.com/">GitHub</a>
+            </div>
+        </header>
+
+        <section class="about">
+            <h2>Sobre Mim</h2>
+
+            <p>
+                Desenvolvedor web com experiência em HTML,
+                CSS, JavaScript e PHP. Atualmente mantenho
+                projetos publicados e em constante evolução.
+            </p>
+        </section>
+
+        <section id="projects" class="projects">
+
+            <h2>Projetos</h2>
+
+            <div class="project-card">
+                <img src="images/gatman.jpg" alt="GatMan">
+
+                <h3>GatMan</h3>
+
+                <p>
+                    Sistema web com conteúdo dinâmico,
+                    autenticação e administração.
+                </p>
+
+                <a href="https://gatman.rf.gd">
+                    Ver Projeto
+                </a>
+            </div>
+
+            <div class="project-card">
+                <img src="images/wortal-kombat.jpg" alt="Wortal Kombat">
+
+                <h3>Wortal Kombat</h3>
+
+                <p>
+                    Portal dedicado à franquia Mortal Kombat
+                    com centenas de páginas e conteúdo.
+                </p>
+
+                <a href="https://wortalkombat.netlify.app">
+                    Ver Projeto
+                </a>
+            </div>
+
+        </section>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: #aaa;
+        }
+
+        .hero-links {
+            margin-top: 30px;
+        }
+
+        .hero-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .about,
+        .projects {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .projects {
+            display: grid;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .project-card h3 {
+            margin-top: 15px;
+        }
+
+        .project-card p {
+            margin: 15px 0;
+        }
+        </style>
+
+    </body>
+</html>
