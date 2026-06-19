@@ -1,0 +1,118 @@
+/*Hero*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px;
+}
+
+.hero > img {
+  width: 220px;
+  border-radius: 50%;
+}
+
+.hero-links{
+    align-items: end;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-links p{
+    font-size: small;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-links ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  gap: 1rem;
+}
+
+.hero-links li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.hero-links li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.hero-links a, .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: width 0.3s ease;
+}
+
+.hero-links a img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.hero-links a span, .links span {
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-links a:hover, .links:hover {
+  width: 15rem;
+}
+
+.hero-links a:hover span, .links:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tech {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.tech img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+
+    .hero{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
