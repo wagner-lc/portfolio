@@ -108,6 +108,11 @@ img {
   object-fit: contain;
 }
 
+/*Galeria*/
+.gallery{
+  display: flex;
+}
+
 @media (max-width: 700px) {
 
     .hero{
