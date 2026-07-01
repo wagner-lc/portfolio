@@ -15,9 +15,12 @@ function menuNav (){
 
 //Galeria
 
-    const preview = document.getElementById('gallery-gatman'); //Exibição principal
+    const preview = document.getElementById('gallery-preview'); //Exibição principal
     const defaultPreview = preview.src; //Default da foto principal
-    const thumbs = Array.from(document.querySelectorAll('gallery-thumbs')); //Imagens
+    const defaultPreviewText = ''; //Default do texto principal
+    const thumbs = Array.from(document.querySelectorAll('.gallery-thumbs img')); //Imagens
+    const text = Array.from(document.querySelectorAll('.gallery-thumbs p')); //Textos
+    const textPreview = document.getElementById('gallery-preview-text'); //Exibição principal do texto
 
     let resetTimer;
     let currentIndex = -1;
@@ -25,32 +28,67 @@ function menuNav (){
     //Reset imagem
     function resetPreview(){
         preview.classList.add('fade-out');
+        textPreview.classList.add('fade-out');
 
         setTimeout(() => {
             preview.src = defaultPreview;
             preview.classList.remove('fade-out');
+            textPreview.classList.remove('fade-out');
+            textPreview.textContent = defaultPreviewText;
             currentIndex = -1;
             
-        }, 100);
+        }, 500);
     }
 
     //Timer
     function restartPreviewTimer(){
         clearTimeout(resetTimer);
-        resetTimer = setTimeout(resetPreview, 5000);
+        resetTimer = setTimeout(resetPreview, 50000);
     }
 
     //Mostrar imagem
-    function showImage(index){
+    function showItem(index){
         currentIndex = (index + thumbs.length) % thumbs.length;
+
         preview.classList.add('fade-out');
+        textPreview.classList.add('fade-out');
+        console.log(currentIndex);
 
         setTimeout(() => {
-           preview.src = defaultPreview;
+           preview.src = thumbs[currentIndex].src;
+           textPreview.textContent = text[currentIndex].textContent;
+        
            preview.classList.remove('fade-out'); 
-           currentIndex = -1;
+           textPreview.classList.remove('fade-out');
         
         }, 100);
 
         restartPreviewTimer();
     }
+/*
+    function showText(index){
+        currentTextIndex = (index + text.length) % text.length;
+        textPreview.classList.add('fade-out');
+        console.log(currentTextIndex);
+        console.log(text[currentTextIndex]);
+
+        setTimeout(() => {
+            textPreview.textContent = text[currentTextIndex].textContent;
+            textPreview.classList.remove('fade-out');
+        }, 100);
+    }  */
+
+    //HOVER / CLICK
+    thumbs.forEach((img, index) => {
+        img.addEventListener('mouseenter', () => showItem(index));
+        img.addEventListener('click', () => showItem(index));
+    });
+
+    //Teclado
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+            showItem(currentIndex - 1);
+        } else if (event.key === 'ArrowRight') {
+            showItem(currentIndex + 1);
+        }
+    });

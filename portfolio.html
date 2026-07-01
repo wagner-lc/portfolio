@@ -53,7 +53,7 @@
                 <li><a href="#formations" title="Formações"></a>Formações</li>
             </ul>
         </nav>
-        <section class="about">
+        <section class="about" id="about">
             <h2>Sobre Mim</h2>
             <p>
                 Desenvolvedor web com experiência em HTML,
@@ -67,48 +67,45 @@
             <h2>Projetos</h2>
 
             <section class="project-card">
-                <div class ="project-figcaption">
-                    <img src="imagens/gatman.jpeg" alt="GatMan">
-                    <figcaption>GatMan</figcaption>
-                </div>
-                <div class ="project-figcaption">
-                    <img src="imagens/wortal-kombat.png" alt="Wortal Kombat">
-                    <figcaption>Wortal Kombat</figcaption>
-                </div>
+                    <a href="#gatman" title="GatMan"><img src="imagens/gatman.jpeg" alt="GatMan"></a>
+                    <a href="#wortalkombat" title="Wortal Kombat"><img src="imagens/wortal-kombat.png" alt="Wortal Kombat"></a>                    
             </section>
 
-
-                <h3>GatMan</h3>
-                <a href="https://gatman.rf.gd">
-                </a>
-                <section class="gallery" id="gallery-gatman">
-                    <img id="gallery-preview" src="imagens/gatman.jpeg" alt="Galeria Gatman">
-
-                    <div id="gallery-thumbs">
-                        <img src="imagens/gatman.gif" alt="">
-                        <img src="imagens/github.png" alt="">
-                    </div>
+                <section id="gatman">
+                    <h3>GatMan</h3>
+                    <a href="https://gatman.rf.gd">
+                    </a>
+                    <section class="gallery" id="gallery">
+                        <div class="gallery-preview-container">
+                            <img class="gallery-preview" id="gallery-preview" src="imagens/gatman.jpeg" alt="Galeria Gatman">
+                            <p class="gallery-preview-text" id="gallery-preview-text"></p>
+                        </div>
+                        
+                        <div class="gallery-thumbs" id="gallery-thumbs">
+                            <img src="imagens/gatman.gif" alt="">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <img src="imagens/github.png" alt="">
+                            <p>Imagem 2</p>
+                        </div>
+                    </section>
+                    <p>
+                        Sistema web destinado a registros e administração de manutenção de uma rede hoteleira,
+                        autenticação e administração.
+                    </p>
                 </section>
-                <p>
-                    Sistema web destinado a registros e administração de manutenção de uma rede hoteleira,
-                    autenticação e administração.
-                </p>
 
-
-            <div class="project-card">
-
-                <h3>Wortal Kombat</h3>
-                <a href="https://wortalkombat.netlify.app">
-                    Ver Projeto
-                </a>
-                <section class="gallery" id="galeria-wortal-kombat">
+                <section id="wortalkombat">
+                    <h3>Wortal Kombat</h3>
+                    <a href="https://wortalkombat.netlify.app">
+                        Ver Projeto
+                    </a>
+                    <section class="gallery" id="galeria-wortal-kombat">
+                    </section>
+                    <p>
+                        Fan-site dedicado à franquia Mortal Kombat,
+                        atualmente abordando os 3 jogos originais.
+                    </p>
                 </section>
-                <p>
-                    Fan-site dedicado à franquia Mortal Kombat,
-                    atualmente abordando os 3 jogos originais.
-                </p>
-
-            </div>
         </section>
     </body>
     <script src="portfolio.js"></script>
