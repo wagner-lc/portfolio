@@ -1,5 +1,5 @@
 //Menu-nav
-
+/*
 function menuNav (){
     const container = document.getElementById('menu-nav');
     
@@ -11,7 +11,7 @@ function menuNav (){
         </ul>
         `;
     container.innerHTML = html;
-}
+}*/
 
 //Galeria
 
@@ -43,7 +43,7 @@ function menuNav (){
     //Timer
     function restartPreviewTimer(){
         clearTimeout(resetTimer);
-        resetTimer = setTimeout(resetPreview, 50000);
+        resetTimer = setTimeout(resetPreview, 10000);
     }
 
     //Mostrar imagem
@@ -61,27 +61,16 @@ function menuNav (){
            preview.classList.remove('fade-out'); 
            textPreview.classList.remove('fade-out');
         
-        }, 100);
+        }, 800);
 
         restartPreviewTimer();
     }
-/*
-    function showText(index){
-        currentTextIndex = (index + text.length) % text.length;
-        textPreview.classList.add('fade-out');
-        console.log(currentTextIndex);
-        console.log(text[currentTextIndex]);
-
-        setTimeout(() => {
-            textPreview.textContent = text[currentTextIndex].textContent;
-            textPreview.classList.remove('fade-out');
-        }, 100);
-    }  */
 
     //HOVER / CLICK
     thumbs.forEach((img, index) => {
         img.addEventListener('mouseenter', () => showItem(index));
         img.addEventListener('click', () => showItem(index));
+        img.addEventListener('mouseleave', () => resetPreview());
     });
 
     //Teclado
@@ -92,3 +81,4 @@ function menuNav (){
             showItem(currentIndex + 1);
         }
     });
+

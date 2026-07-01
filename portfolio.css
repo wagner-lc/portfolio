@@ -126,12 +126,13 @@ img {
 }
 
 .project-card img {
-  width: 50%;
+  width: 10rem;
   height: 10rem;
   object-fit: contain;
   justify-content: space-between;
   display: flex;
   border: 1px solid blue;
+  margin: 1rem;
 }
 
 .gallery{
@@ -155,6 +156,9 @@ img {
   object-fit: contain;
   aspect-ratio: 16 / 9;
   margin: 1rem;
+  opacity: 1;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
 }
 
 #gallery-preview-text{
@@ -168,6 +172,18 @@ img {
   scrollbar-width: none;
   margin: 1rem;
   padding: 1rem;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  transform: translateY(0);
+}
+.gallery-preview.fade-out{
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+#gallery-preview-text.fade-out{
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 .gallery-preview-container p{
