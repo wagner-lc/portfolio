@@ -67,10 +67,18 @@
             <h2>Projetos</h2>
 
             <section class="project-card">
-                    <a href="#gatman" title="GatMan"><img src="imagens/gatman.jpeg" alt="GatMan"></a>
-                    <a href="#wortalkombat" title="Wortal Kombat"><img src="imagens/wortal-kombat.png" alt="Wortal Kombat"></a>                    
+                    <a href="javascript:showProjectDetails(projects[0])" title="GatMan"><img src="imagens/gatman.jpeg" alt="GatMan"></a>
+                    <a href="javascript:showProjectDetails(projects[1])" title="Wortal Kombat"><img src="imagens/wortal-kombat.png" alt="Wortal Kombat"></a>                    
             </section>
-
+            <section class="project-details">
+                <h3 id="project-title"></h3>
+                <img id="project-image">
+                <p id="project-description"></p>
+                <div id="project-technologies"></div>
+                <div id="gallery"></div>
+                <a id="project-site" target="_blank">Ver Site</a>
+                <a id="project-github" target="_blank">Ver no GitHub</a>
+            </section>
                 <section id="gatman">
                     <h3>GatMan</h3>
                     <a href="https://gatman.rf.gd">
@@ -93,8 +101,8 @@
                         autenticação e administração.
                     </p>
                 </section>
-
-                <section id="wortalkombat">
+                <!-- Wortal Kombat 
+                    <section id="wortalkombat">
                     <h3>Wortal Kombat</h3>
                     <a href="https://wortalkombat.netlify.app">
                         Ver Projeto
@@ -105,7 +113,7 @@
                         Fan-site dedicado à franquia Mortal Kombat,
                         atualmente abordando os 3 jogos originais.
                     </p>
-                </section>
+                </section>-->
         </section>
     </body>
     <script src="portfolio.js"></script>

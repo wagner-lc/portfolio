@@ -12,6 +12,45 @@ function menuNav (){
         `;
     container.innerHTML = html;
 }*/
+//Projects
+
+const projects = [
+    {
+        title: 'GatMan',
+        description: 'Sistema web destinado a registros e administração de manutenção de uma rede hoteleira, autenticação e administração.',
+        technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+        image: 'imagens/gatman.jpeg',
+        site: 'https://gatman.rf.gd',
+        github: 'https://github.com/wagner-lc/gatman'
+    },
+    {
+        title: 'Wortal Kombat',
+        description: 'Fan-site dedicado à franquia Mortal Kombat, atualmente abordando os 3 jogos originais.',
+        technologies: ['HTML', 'CSS', 'JavaScript'],
+        image: 'imagens/wortal-kombat.png',
+        site: 'https://wortalkombat.netlify.app',
+        github: 'https://github.com/wagner-lc/ProjectMK'
+    }
+];
+
+function showProjectDetails(project) {
+    document.getElementById('project-title').textContent = project.title;
+    document.getElementById('project-image').src = project.image;
+    document.getElementById('project-description').textContent = project.description;
+    document.getElementById('project-site').href = project.site;
+    document.getElementById('project-github').href = project.github;
+
+    const techContainer = document.getElementById('project-technologies');
+    techContainer.innerHTML = '';
+    project.technologies.forEach(tech => {
+        const techElement = document.createElement('span');
+        techElement.textContent = tech;
+        techContainer.appendChild(techElement);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => { showProjectDetails(projects[0]); });
+
 
 //Galeria
 
