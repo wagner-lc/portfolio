@@ -107,6 +107,71 @@ img {
   height: 48px;
   object-fit: contain;
 }
+/*Menu navegação*/
+#menu-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+#menu-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 16px;
+}
+
+#menu-nav li {
+  display: inline-block;
+  border: 1px solid yellow;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+/*Projetos*/
+
+h3 {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#project-image {
+  width: 20%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
+#project-description {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#project-tech {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+#project-tech  img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+#project-site, #project-github {
+  display: inline-block;
+  margin: 16px;
+  padding: 8px 16px;
+  background-color: yellow;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
 
 /*Galeria*/
 .project-card {
@@ -135,14 +200,14 @@ img {
   margin: 1rem;
 }
 
-.gallery{
+#project-gallery{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid red;
 }
-.gallery-preview-container{
+#gallery-preview-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +215,7 @@ img {
   border: 1px solid purple;
 }
 
-.gallery-preview{
+#gallery-preview{
   width: 60%;
   height: 100%;
   object-fit: contain;
@@ -186,14 +251,14 @@ img {
   transform: translateY(10px);
 }
 
-.gallery-preview-container p{
+#gallery-preview-container p{
   margin-top: 8px;
   font-size: large;
   text-align: center;
   width: 40%;
 }
 
-.gallery-thumbs{
+#gallery-thumbs{
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -201,14 +266,14 @@ img {
   margin-top: 16px;
 }
 
-.gallery-thumbs img {
+#gallery-thumbs img {
     width: 6rem;
     height: 4rem;
     object-fit: contain;
     cursor: pointer;
 }
 
-.gallery-thumbs p {
+#gallery-thumbs p {
   display: none;
 }
 @media (max-width: 700px) {

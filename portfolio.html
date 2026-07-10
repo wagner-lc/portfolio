@@ -67,19 +67,41 @@
             <h2>Projetos</h2>
 
             <section class="project-card">
-                    <a href="javascript:showProjectDetails(projects[0])" title="GatMan"><img src="imagens/gatman.jpeg" alt="GatMan"></a>
-                    <a href="javascript:showProjectDetails(projects[1])" title="Wortal Kombat"><img src="imagens/wortal-kombat.png" alt="Wortal Kombat"></a>                    
+
+                <img
+                    src="imagens/gatman.jpeg"
+                    data-project="gatman"
+                >
+
+                <img
+                    src="imagens/wortal-kombat.png"
+                    data-project="wortalkombat"
+                >
+
             </section>
             <section class="project-details">
+
                 <h3 id="project-title"></h3>
-                <img id="project-image">
+
+                <img id="project-image" src="" alt="">
+
                 <p id="project-description"></p>
-                <div id="project-technologies"></div>
-                <div id="gallery"></div>
-                <a id="project-site" target="_blank">Ver Site</a>
-                <a id="project-github" target="_blank">Ver no GitHub</a>
+
+                <div id="project-tech"></div>
+
+                <div id="project-gallery">
+                    <img id="gallery-preview">
+                    <div id="gallery-preview-text"></div>
+                </div>
+                <div id="gallery-thumbs"></div>
+
+                <div class="project-links">
+                    <a id="project-site" target="_blank">Ver Site</a>
+                    <a id="project-github" target="_blank">GitHub</a>
+                </div>
+
             </section>
-                <section id="gatman">
+                <!-- <section id="gatman">
                     <h3>GatMan</h3>
                     <a href="https://gatman.rf.gd">
                     </a>
@@ -101,7 +123,7 @@
                         autenticação e administração.
                     </p>
                 </section>
-                <!-- Wortal Kombat 
+                Wortal Kombat 
                     <section id="wortalkombat">
                     <h3>Wortal Kombat</h3>
                     <a href="https://wortalkombat.netlify.app">
