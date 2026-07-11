@@ -4,9 +4,9 @@ const projects = {
 
     gatman: {
         title: "GatMan",
-        description: "Sistema interno de manutenção hoteleira com gestão de ocorrências, quartos e galerias.",
+        //description: "Sistema interno de manutenção hoteleira com gestão de ocorrências, quartos e galerias.",
 
-        image: "imagens/gatman.jpeg",
+        //image: "imagens/gatman.jpeg",
 
         tech: [
             "HTML",
@@ -18,8 +18,8 @@ const projects = {
 
         gallery: [
             { image: "imagens/html.webp", text: "Página inicial do site" },
-            { image: "imagens/gatman2.png", text: "Sobre o projeto" },
-            { image: "imagens/gatman3.png", text: "Contato" }
+            { image: "imagens/IMG1.png", text: "Sobre o projeto" },
+            { image: "imagens/IMG3.png", text: "Contato" }
         ],
 
         site: 'https://gatman.rf.gd',
@@ -28,9 +28,9 @@ const projects = {
 
     wortalkombat: {
         title: "Wortal Kombat",
-        description: "Portal dedicado à franquia Mortal Kombat com centenas de páginas de conteúdo.",
+        //description: "Portal dedicado à franquia Mortal Kombat com centenas de páginas de conteúdo.",
 
-        image: "imagens/wortal-kombat.png",
+        //image: "imagens/wortal-kombat.png",
 
         tech: [
             "HTML",
@@ -39,9 +39,9 @@ const projects = {
         ],
 
         gallery: [
-            { image: "imagens/wk1.png", text: "Página inicial do site" },
-            { image: "imagens/wk2.png", text: "Sobre o projeto" },
-            { image: "imagens/wk3.png", text: "Contato" }   
+            { image: "imagens/IMG1.png", text: "Página inicial do site" },
+            { image: "imagens/IMG2.png", text: "Sobre o projeto" },
+            { image: "imagens/IMG3.png", text: "Contato" }   
         ],
 
         site: 'https://wortalkombat.netlify.app',
@@ -59,8 +59,8 @@ const technologyIcons = {
 };
 
 const title = document.getElementById("project-title");
-const image = document.getElementById("project-image");
-const description = document.getElementById("project-description");
+//const image = document.getElementById("project-image");
+//const description = document.getElementById("project-description");
 const tech = document.getElementById("project-tech");
 const gallery = document.getElementById("project-gallery");
 const site = document.getElementById("project-site");
@@ -87,42 +87,22 @@ function renderProject(project) {
 
     title.textContent = project.title;
 
-    image.src = project.image;
+    /*image.src = project.image;
     image.alt = project.title;
 
-    description.textContent = project.description;
+    description.textContent = project.description;*/
 
     site.href = project.site;
     github.href = project.github;
 
     renderTech(project.tech);
     renderGallery(project);
+    animateProjectParts();
 
     console.log("renderProject funcionando");
 }
-/*
-function renderGallery(project) {
-    
-    gallery.innerHTML = "";
 
-    project.gallery.forEach(item => {
-        const img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.text;
-
-        const p = document.createElement("p");
-        p.textContent = item.text;
-
-        gallery.appendChild(img);
-        gallery.appendChild(p);
-    });
-    console.log("renderGallery funcionando");
-}*/
-
-document
-    .querySelectorAll(".project-card img")
-    .forEach(card => {
-
+document.querySelectorAll(".project-card img").forEach(card => {
         card.addEventListener("click", () => {
 
             const id = card.dataset.project;
@@ -132,9 +112,12 @@ document
 
     });
 
+    const projectGallery = document.getElementById("project-gallery");
     const galleryThumbs = document.getElementById("gallery-thumbs");
     const preview = document.getElementById("gallery-preview");
     const previewText = document.getElementById("gallery-preview-text");
+
+let galleryTimer;
 
 function renderGallery(project) {
 
@@ -151,87 +134,67 @@ function renderGallery(project) {
 
         thumb.addEventListener("mouseenter", () => {
 
-            preview.src = item.image;
-            previewText.textContent = item.text;
+            clearTimeout(galleryTimer);
+
+            preview.classList.add("fade");
+            previewText.classList.add("fade");
+
+            galleryTimer = setTimeout(() => {
+
+                preview.src = item.image;
+                previewText.textContent = item.text;
+
+                preview.classList.remove("fade");
+                previewText.classList.remove("fade");
+
+            }, 250);
 
         });
 
         galleryThumbs.appendChild(thumb);
 
     });
-    console.log("renderGallery funcionando");
 
 }
-/*
-//Galeria
 
-    const preview = document.getElementById('project-gallery'); //Exibição principal
-    const defaultPreview = preview.src; //Default da foto principal
-    const defaultPreviewText = ''; //Default do texto principal
-    const thumbs = Array.from(document.querySelectorAll('.gallery-thumbs img')); //Imagens
-    const text = Array.from(document.querySelectorAll('.gallery-thumbs p')); //Textos
-    const textPreview = document.getElementById('gallery-preview-text'); //Exibição principal do texto
+//Fade geral
+function animateProjectParts() {
 
-    let resetTimer;
-    let currentIndex = -1;
+    const parts = document.querySelectorAll('.project-part');
 
-    //Reset imagem
-    function resetPreview(){
-        preview.classList.add('fade-out');
-        textPreview.classList.add('fade-out');
-
-        setTimeout(() => {
-            preview.src = defaultPreview;
-            preview.classList.remove('fade-out');
-            textPreview.classList.remove('fade-out');
-            textPreview.textContent = defaultPreviewText;
-            currentIndex = -1;
-            
-        }, 500);
-    }
-
-    //Timer
-    function restartPreviewTimer(){
-        clearTimeout(resetTimer);
-        resetTimer = setTimeout(resetPreview, 10000);
-    }
-
-    //Mostrar imagem
-    function showItem(project) {
-        currentIndex = (project.index + thumbs.length) % thumbs.length;
-
-        preview.classList.add('fade-out');
-        textPreview.classList.add('fade-out');
-        console.log(currentIndex);
-        console.log(thumbs.length);
-
-
-        setTimeout(() => {
-           preview.src = thumbs[currentIndex].src;
-           textPreview.textContent = text[currentIndex].textContent;
-        
-           preview.classList.remove('fade-out'); 
-           textPreview.classList.remove('fade-out');
-        
-        }, 800);
-
-        restartPreviewTimer();
-    }
-
-    //HOVER / CLICK
-    thumbs.forEach((img, index) => {
-        img.addEventListener('mouseenter', () => showItem(index));
-        img.addEventListener('click', () => showItem(index));
-        img.addEventListener('mouseleave', () => resetPreview());
+    parts.forEach(part => {
+        part.classList.remove('show');
     });
 
-    //Teclado
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowLeft') {
-            showItem(currentIndex - 1);
-        } else if (event.key === 'ArrowRight') {
-            showItem(currentIndex + 1);
-        }
+    parts.forEach((part, index) => {
+        setTimeout(() => {
+            part.classList.add('show');
+        }, index * 300);
+    });
+    console.log("animateProjectParts funcionando");
+
+}
+
+// Fade galeria
+
+function animateGallery() {
+
+    const galleryParts = document.querySelectorAll('.gallery-part');
+
+    galleryParts.forEach(part => {
+        part.classList.remove('show');
     });
 
- */
+    setTimeout(() => {
+
+        galleryParts.forEach((part, index) => {
+
+            setTimeout(() => {
+                part.classList.add('show');
+            }, index * 300);
+
+        });
+
+    }, 50);
+
+}
