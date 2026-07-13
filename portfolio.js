@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", shrinkHero);
+
 //Projects
 
 const projects = {
@@ -175,26 +177,29 @@ function animateProjectParts() {
 
 }
 
-// Fade galeria
-/*
-function animateGallery() {
+//Hero shrink
 
-    const galleryParts = document.querySelectorAll('.gallery-part');
+function shrinkHero() {
+    const hero = document.getElementById("hero");
+    const heroImage = hero.querySelector("img");
+    const heroLinks = document.getElementById("hero-links");
+    const heroParagraph = heroLinks.querySelector("p");
+    const heroTech = document.querySelector(".tech");
 
-    galleryParts.forEach(part => {
-        part.classList.remove('fade');
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            hero.classList.add("shrink");
+            heroImage.style.display = "none";
+            heroLinks.classList.add("shrink");
+            heroParagraph.style.display = "none";
+            heroTech.style.display = "none";
+        } else {
+            hero.classList.remove("shrink");
+            heroImage.style.display = "flex";
+            heroLinks.classList.remove("shrink");
+            heroParagraph.style.display = "flex";
+            heroTech.style.display = "flex";
+        }
     });
-
-    setTimeout(() => {
-
-        galleryParts.forEach((part, index) => {
-
-            setTimeout(() => {
-                part.classList.add('fade');
-            }, index * 700);
-
-        });
-
-    }, 50);
-
-}*/
+    console.log("shrinkHero funcionando");
+}

@@ -96,6 +96,21 @@ img {
   transform: translateX(0);
 }
 
+.hero.shrink, .hero-links.shrink {
+  display: flex;
+  flex-direction: row;
+  height: 1rem;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 0;
+  position: fixed;
+  justify-content: flex-start;
+}
+
+.hero.shrink img {
+  width: 48px;
+  height: 48px;
+}
 .tech {
   display: flex;
   gap: 12px;
