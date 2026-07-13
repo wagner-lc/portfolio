@@ -41,7 +41,7 @@ const projects = {
         gallery: [
             { image: "imagens/IMG1.png", text: "Página inicial do site" },
             { image: "imagens/IMG2.png", text: "Sobre o projeto" },
-            { image: "imagens/IMG3.png", text: "Contato" }   
+            { image: "imagens/IMG3.png", text: "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." }   
         ],
 
         site: 'https://wortalkombat.netlify.app',
@@ -147,7 +147,7 @@ function renderGallery(project) {
                 preview.classList.remove("fade");
                 previewText.classList.remove("fade");
 
-            }, 250);
+            }, 450);
 
         });
 
@@ -176,13 +176,13 @@ function animateProjectParts() {
 }
 
 // Fade galeria
-
+/*
 function animateGallery() {
 
     const galleryParts = document.querySelectorAll('.gallery-part');
 
     galleryParts.forEach(part => {
-        part.classList.remove('show');
+        part.classList.remove('fade');
     });
 
     setTimeout(() => {
@@ -190,11 +190,11 @@ function animateGallery() {
         galleryParts.forEach((part, index) => {
 
             setTimeout(() => {
-                part.classList.add('show');
-            }, index * 300);
+                part.classList.add('fade');
+            }, index * 700);
 
         });
 
     }, 50);
 
-}
+}*/
