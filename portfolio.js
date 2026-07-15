@@ -183,23 +183,45 @@ function shrinkHero() {
     const hero = document.getElementById("hero");
     const heroImage = hero.querySelector("img");
     const heroLinks = document.getElementById("hero-links");
+    const heroTitle = heroLinks.querySelector("h1");
+    const heroUl = heroLinks.querySelector("ul");
     const heroParagraph = heroLinks.querySelector("p");
     const heroTech = document.querySelector(".tech");
+    const heroNav = document.getElementById("hero-nav");
+    const menuNav = document.querySelector(".menu-nav");
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            hero.classList.add("shrink");
-            heroImage.style.display = "none";
+    window.addEventListener("scroll", function() {
+    
+        const shrink = window.scrollY > 250; // Valor de scroll para iniciar o shrink
+
+        hero.classList.toggle("shrink", shrink);
+        heroImage.classList.toggle("shrink", shrink);
+        heroLinks.classList.toggle("shrink", shrink);
+        heroTitle.classList.toggle("shrink", shrink);
+        heroUl.classList.toggle("shrink", shrink);
+        heroParagraph.classList.toggle("shrink", shrink);
+        heroTech.classList.toggle("shrink", shrink);
+        heroNav.classList.toggle("shrink", shrink);
+        menuNav.classList.toggle("shrink", shrink);
+        /*if (window.scrollY > 250) {
+            hero.classList.toggle("shrink", shrink);
+            heroImage.classList.add("shrink");
             heroLinks.classList.add("shrink");
-            heroParagraph.style.display = "none";
-            heroTech.style.display = "none";
+            heroTitle.classList.add("shrink");
+            heroUl.classList.add("shrink");
+            heroParagraph.classList.add("shrink");
+            heroTech.classList.add("shrink");
+            menuNav.classList.add("shrink");
         } else {
             hero.classList.remove("shrink");
-            heroImage.style.display = "flex";
+            heroImage.classList.remove("shrink");
             heroLinks.classList.remove("shrink");
-            heroParagraph.style.display = "flex";
-            heroTech.style.display = "flex";
-        }
+            heroTitle.classList.remove("shrink");
+            heroUl.classList.remove("shrink");
+            heroParagraph.classList.remove("shrink");
+            heroTech.classList.remove("shrink");
+            menuNav.classList.remove("shrink");
+        }*/
     });
     console.log("shrinkHero funcionando");
 }
