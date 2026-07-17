@@ -180,60 +180,30 @@ function animateProjectParts() {
 //Hero shrink
 
 function shrinkHero() {
+
     const hero = document.getElementById("hero");
-    const heroImage = hero.querySelector("img");
-    const heroLinks = document.getElementById("hero-links");
-    const heroTitle = heroLinks.querySelector("h1");
-    const heroUl = heroLinks.querySelector("ul");
-    const heroParagraph = heroLinks.querySelector("p");
-    const heroTech = document.querySelector(".tech");
-    const heroNav = document.getElementById("hero-nav");
-    const menuNav = document.querySelector(".menu-nav");
+    const heroShrink = document.getElementById("hero-shrink");
 
     let isShrink = false;
 
-    window.addEventListener("scroll", function() {
-        
-        if (!isShrink && window.scrollY > 400) {
+    window.addEventListener("scroll", () => {
+
+        if (!isShrink && window.scrollY > 150) {
+
             isShrink = true;
-            hero.classList.add("shrink");
+
+            hero.classList.add("hide");
+            heroShrink.classList.add("show");
 
         } else if (isShrink && window.scrollY < 120) {
-            isShrink = false;
-            hero.classList.remove("shrink");
-        }
-        console.log("scrollY:", window.scrollY, "isShrink:", isShrink);
-        /*
-        const shrink = window.scrollY > 350; // Valor de scroll para iniciar o shrink
 
-        hero.classList.toggle("shrink", shrink);
-        heroImage.classList.toggle("shrink", shrink);
-        heroLinks.classList.toggle("shrink", shrink);
-        heroTitle.classList.toggle("shrink", shrink);
-        heroUl.classList.toggle("shrink", shrink);
-        heroParagraph.classList.toggle("shrink", shrink);
-        heroTech.classList.toggle("shrink", shrink);
-        heroNav.classList.toggle("shrink", shrink);
-        menuNav.classList.toggle("shrink", shrink);
-        if (window.scrollY > 250) {
-            hero.classList.toggle("shrink", shrink);
-            heroImage.classList.add("shrink");
-            heroLinks.classList.add("shrink");
-            heroTitle.classList.add("shrink");
-            heroUl.classList.add("shrink");
-            heroParagraph.classList.add("shrink");
-            heroTech.classList.add("shrink");
-            menuNav.classList.add("shrink");
-        } else {
-            hero.classList.remove("shrink");
-            heroImage.classList.remove("shrink");
-            heroLinks.classList.remove("shrink");
-            heroTitle.classList.remove("shrink");
-            heroUl.classList.remove("shrink");
-            heroParagraph.classList.remove("shrink");
-            heroTech.classList.remove("shrink");
-            menuNav.classList.remove("shrink");
-        }*/
+            isShrink = false;
+
+            hero.classList.remove("hide");
+            heroShrink.classList.remove("show");
+
+        }
+
     });
-    console.log("shrinkHero funcionando");
+
 }
