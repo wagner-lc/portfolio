@@ -64,20 +64,21 @@ img {
 }
 
 .hero-links a, .links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 40px;
-    overflow: hidden;
-    text-decoration: none;
-    color: white;
-    transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+  /*overflow: hidden;*/
+  text-decoration: none;
+  color: white;
+  transition: width 0.3s ease;
 }
 
 .hero-links a img {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
+  
 }
 
 .hero-links a span, .links span {
@@ -114,26 +115,39 @@ img {
 }
 /* Shrinks */
 
-.hero.shrink, .hero-links.shrink {
+.hero.shrink, .hero.shrink .hero-links {
   display: flex;
   flex-direction: row;
-  height: 1rem;
+  height: auto;
   max-width: 100%;
   width: 100%;
-  margin-top: 0;
+  top: 0;
+  margin: 0;
   position: fixed;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 0;
   border: solid 1px red;
   background-color: #111;
   z-index: 10;
+  /*gap: 0.5rem;
+  padding-top: 0.5rem;
+  white-space: nowrap;*/
 }
-.hero-nav.shrink {
+
+.hero.shrink .hero-links nav li a{
+  width: auto;
+}
+
+.hero.shrink .hero-links a, .hero.shrink .links {
+  width: 2rem;
+  padding: 0.5rem;
+}
+.hero.shrink .hero-nav {
   display: flex;
   flex-direction: row;
 }
-.hero-nav.shrink ul {
+.hero.shrink .hero-nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -144,22 +158,22 @@ img {
   height: 48px;
 }
 
-.hero-links p.shrink, .hero img.shrink, .tech.shrink {
+.hero.shrink .hero-links p, .hero.shrink .tech {
   display: none;
 }
 
-h1.shrink {
+.hero.shrink h1 {
   font-size: 1rem;
   margin-left: 0;
   margin-top: 0;
 }
-.hero-links.shrink ul{
+.hero.shrink .hero-links ul{
   flex-direction: row;
   gap: 8px;
   margin-top: 0;
 }
 
-.menu-nav.shrink {
+.hero.shrink .menu-nav {
   display: none;
 }
 
@@ -172,6 +186,13 @@ h1.shrink {
   justify-content: center;
   gap: 16px;
   margin-top: 32px;
+      opacity:1;
+    transform:scale(1);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        width .35s ease;
 }
 #menu-nav ul {
   display: flex;

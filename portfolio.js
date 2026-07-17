@@ -195,7 +195,7 @@ function shrinkHero() {
         const shrink = window.scrollY > 250; // Valor de scroll para iniciar o shrink
 
         hero.classList.toggle("shrink", shrink);
-        heroImage.classList.toggle("shrink", shrink);
+        /*heroImage.classList.toggle("shrink", shrink);
         heroLinks.classList.toggle("shrink", shrink);
         heroTitle.classList.toggle("shrink", shrink);
         heroUl.classList.toggle("shrink", shrink);
@@ -203,7 +203,7 @@ function shrinkHero() {
         heroTech.classList.toggle("shrink", shrink);
         heroNav.classList.toggle("shrink", shrink);
         menuNav.classList.toggle("shrink", shrink);
-        /*if (window.scrollY > 250) {
+        if (window.scrollY > 250) {
             hero.classList.toggle("shrink", shrink);
             heroImage.classList.add("shrink");
             heroLinks.classList.add("shrink");
