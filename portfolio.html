@@ -9,10 +9,11 @@
     <body>
         
         <header class="hero" id="hero">
-            <img src="imagens/github.png" alt="Wagner foto">
+            <img src="imagens/github.png" id="hero-image" alt="Wagner foto">
 
-            <div class="hero-links" id="hero-links">
+            <div class="hero-feats">
                 <h1>Wagner Cardoso</h1>
+                <p>Desenvolvedor Web Júnior</p>
                 <nav class="hero-nav" id="hero-nav">
                     <ul>
                         <li><a href="#about" title="Sobre mim">Sobre mim</a></li>
@@ -20,37 +21,38 @@
                         <li><a href="#formations" title="Formações"></a>Formações</li>
                     </ul>
                 </nav>
-                <p>Desenvolvedor Web Júnior</p>
-                <ul>
-                    <li>
-                        <a href="https://github.com/wagner-lc">
-                            <img src="imagens/github.png" title= "GitHub" alt="github logo">
-                            <span>https://github.com/wagner-lc</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/wagnercardoso7/">
-                            <img src="imagens/linkedin.webp" title= "LinkedIn" alt="linkedin logo">
-                            <span>https://www.linkedin.com/in/wagnercardoso7/</span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="links">
-                            <img src="imagens/outlook.webp" title= "E-mail" alt="e-mail outlook">
-                            <span> wagnerlc07@hotmail.com</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="links">📞 
-                            <span> +351 932 315 890</span>
-                        </div>
-                    </li>
-                </ul>
-                <div class="tech">
-                    <img src="imagens/html.webp" title= "HTML" alt="html">
-                    <img src="imagens/css.webp" title= "CSS" alt="css">
-                    <img src="imagens/js.webp" title= "JavaScript" alt="js">
-                    <img src="imagens/php.webp" title= "PHP" alt="php">
+                <div class="hero-links">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/wagner-lc">
+                                <img src="imagens/github.png" title= "GitHub" alt="github logo">
+                                <span>https://github.com/wagner-lc</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/wagnercardoso7/">
+                                <img src="imagens/linkedin.webp" title= "LinkedIn" alt="linkedin logo">
+                                <span>https://www.linkedin.com/in/wagnercardoso7/</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="links">
+                                <img src="imagens/outlook.webp" title= "E-mail" alt="e-mail outlook">
+                                <span> wagnerlc07@hotmail.com</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="links">📞 
+                                <span> +351 932 315 890</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="tech">
+                        <img src="imagens/html.webp" title= "HTML" alt="html">
+                        <img src="imagens/css.webp" title= "CSS" alt="css">
+                        <img src="imagens/js.webp" title= "JavaScript" alt="js">
+                        <img src="imagens/php.webp" title= "PHP" alt="php">
+                    </div>
                 </div>
             </div>
         </header>
@@ -61,83 +63,86 @@
                 <li><a href="#formations" title="Formações"></a>Formações</li>
             </ul>
         </nav>
-        <section class="about" id="about">
-            <h2>Sobre Mim</h2>
-            <p>
-                Desenvolvedor web com experiência em HTML,
-                CSS, JavaScript e PHP. Atualmente mantenho
-                projetos publicados e em constante evolução.
-            </p>
-        </section>
-
-        <section id="projects" class="projects">
-
-            <h2>Projetos</h2>
-
-            <section class="project-card">
-
-                <img
-                    src="imagens/gatman.jpeg"
-                    data-project="gatman"
-                >
-
-                <img
-                    src="imagens/wortal-kombat.png"
-                    data-project="wortalkombat"
-                >
-
+        <main>
+            <section class="about" id="about">
+                <h2>Sobre Mim</h2>
+                <p>
+                    Desenvolvedor web com experiência em HTML,
+                    CSS, JavaScript e PHP. Atualmente mantenho
+                    projetos publicados e em constante evolução.
+                </p>
             </section>
-            <section class="project-details">
 
-                <h3 id="project-title" class="project-part"></h3>
-                <div id="project-gallery" class="project-part">
-                    <img id="gallery-preview">
-                    <div id="gallery-preview-text" class="gallery-part"></div>
-                </div>
-                <div id="gallery-thumbs" class="project-part"></div>
-                <div id="project-tech" class="project-part"></div>
-                <div class="project-links project-part" >
-                    <a id="project-site" target="_blank">Ver Site</a>
-                    <a id="project-github" target="_blank">GitHub</a>
-                </div>
+            <section id="projects" class="projects">
 
-            </section>
-                <!-- <section id="gatman">
-                    <h3>GatMan</h3>
-                    <a href="https://gatman.rf.gd">
-                    </a>
-                    <section class="gallery" id="gallery">
-                        <div class="gallery-preview-container">
-                            <img class="gallery-preview" id="gallery-preview" src="imagens/gatman.jpeg" alt="Galeria Gatman">
-                            <p class="gallery-preview-text" id="gallery-preview-text"></p>
-                        </div>
-                        
-                        <div class="gallery-thumbs" id="gallery-thumbs">
-                            <img src="imagens/gatman.gif" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <img src="imagens/github.png" alt="">
-                            <p>Imagem 2</p>
-                        </div>
-                    </section>
-                    <p>
-                        Sistema web destinado a registros e administração de manutenção de uma rede hoteleira,
-                        autenticação e administração.
-                    </p>
+                <h2>Projetos</h2>
+
+                <section class="project-card">
+
+                    <img
+                        src="imagens/gatman.jpeg"
+                        data-project="gatman"
+                    >
+
+                    <img
+                        src="imagens/wortal-kombat.png"
+                        data-project="wortalkombat"
+                    >
+
                 </section>
-                Wortal Kombat 
-                    <section id="wortalkombat">
-                    <h3>Wortal Kombat</h3>
-                    <a href="https://wortalkombat.netlify.app">
-                        Ver Projeto
-                    </a>
-                    <section class="gallery" id="galeria-wortal-kombat">
+                <section class="project-details">
+
+                    <h3 id="project-title" class="project-part"></h3>
+                    <div id="project-gallery" class="project-part">
+                        <img id="gallery-preview">
+                        <div id="gallery-preview-text" class="gallery-part"></div>
+                    </div>
+                    <div id="gallery-thumbs" class="project-part"></div>
+                    <div id="project-tech" class="project-part"></div>
+                    <div class="project-links project-part" >
+                        <a id="project-site" target="_blank">Ver Site</a>
+                        <a id="project-github" target="_blank">GitHub</a>
+                    </div>
+
+                </section>
+                    <!-- <section id="gatman">
+                        <h3>GatMan</h3>
+                        <a href="https://gatman.rf.gd">
+                        </a>
+                        <section class="gallery" id="gallery">
+                            <div class="gallery-preview-container">
+                                <img class="gallery-preview" id="gallery-preview" src="imagens/gatman.jpeg" alt="Galeria Gatman">
+                                <p class="gallery-preview-text" id="gallery-preview-text"></p>
+                            </div>
+                            
+                            <div class="gallery-thumbs" id="gallery-thumbs">
+                                <img src="imagens/gatman.gif" alt="">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <img src="imagens/github.png" alt="">
+                                <p>Imagem 2</p>
+                            </div>
+                        </section>
+                        <p>
+                            Sistema web destinado a registros e administração de manutenção de uma rede hoteleira,
+                            autenticação e administração.
+                        </p>
                     </section>
-                    <p>
-                        Fan-site dedicado à franquia Mortal Kombat,
-                        atualmente abordando os 3 jogos originais.
-                    </p>
-                </section>-->
-        </section>
+                    Wortal Kombat 
+                        <section id="wortalkombat">
+                        <h3>Wortal Kombat</h3>
+                        <a href="https://wortalkombat.netlify.app">
+                            Ver Projeto
+                        </a>
+                        <section class="gallery" id="galeria-wortal-kombat">
+                        </section>
+                        <p>
+                            Fan-site dedicado à franquia Mortal Kombat,
+                            atualmente abordando os 3 jogos originais.
+                        </p>
+                    </section>-->
+            </section>
+        </main>
+        
     </body>
     <script src="portfolio.js"></script>
 </html>

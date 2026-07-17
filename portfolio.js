@@ -190,12 +190,24 @@ function shrinkHero() {
     const heroNav = document.getElementById("hero-nav");
     const menuNav = document.querySelector(".menu-nav");
 
+    let isShrink = false;
+
     window.addEventListener("scroll", function() {
-    
-        const shrink = window.scrollY > 250; // Valor de scroll para iniciar o shrink
+        
+        if (!isShrink && window.scrollY > 400) {
+            isShrink = true;
+            hero.classList.add("shrink");
+
+        } else if (isShrink && window.scrollY < 120) {
+            isShrink = false;
+            hero.classList.remove("shrink");
+        }
+        console.log("scrollY:", window.scrollY, "isShrink:", isShrink);
+        /*
+        const shrink = window.scrollY > 350; // Valor de scroll para iniciar o shrink
 
         hero.classList.toggle("shrink", shrink);
-        /*heroImage.classList.toggle("shrink", shrink);
+        heroImage.classList.toggle("shrink", shrink);
         heroLinks.classList.toggle("shrink", shrink);
         heroTitle.classList.toggle("shrink", shrink);
         heroUl.classList.toggle("shrink", shrink);
