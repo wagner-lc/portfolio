@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", shrinkHero);
+document.addEventListener("DOMContentLoaded", animateSections);
 
 //Projects
 
@@ -50,6 +51,21 @@ const projects = {
         github: 'https://github.com/wagner-lc/ProjectMK'
     }
 };
+
+const languages = {
+    pt:{
+        subTitle: "Desenvolvedor Web Júnior",
+        subAbout: "Sobre mim",
+        subProject: "Projetos"
+
+    },
+
+    en: {
+        subTitle: "Junior Web Developer",
+        subAbout: "About me",
+        subProject: "Projects"
+    } 
+};
 //Objeto technologyIcons
 
 const technologyIcons = {
@@ -67,6 +83,34 @@ const tech = document.getElementById("project-tech");
 const gallery = document.getElementById("project-gallery");
 const site = document.getElementById("project-site");
 const github = document.getElementById("project-github");
+
+const subtitle = document.getElementById("languages-p");
+const about = document.querySelectorAll(".about-title");
+const project = document.querySelectorAll(".project-title");
+
+function renderLanguage(language){
+
+    subtitle.textContent = language.subTitle;
+
+    about.forEach (item => {item.textContent = language.subAbout;});
+    project.forEach (item => {item.textContent = language.subProject;});
+
+
+}
+document
+    .querySelectorAll("[data-language]")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const id = button.dataset.language;
+
+            renderLanguage(languages[id]);
+
+
+        });
+
+    });
 
 function renderTech(technologies) {
 
@@ -176,12 +220,38 @@ function animateProjectParts() {
     console.log("animateProjectParts funcionando");
 
 }
+// Fade seções
+function animateSections() {
 
+    const sections = document.querySelectorAll("main section");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.3 /*Intersection Observer faz com que a animação só funcione a partir deste ponto, ou seja com 30% da seção mostrada.*/
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+}
 //Hero shrink
 
 function shrinkHero() {
 
     const hero = document.getElementById("hero");
+    const menuNav = document.getElementById("menu-nav")
     const heroShrink = document.getElementById("hero-shrink");
 
     let isShrink = false;
@@ -193,6 +263,7 @@ function shrinkHero() {
             isShrink = true;
 
             hero.classList.add("hide");
+            menuNav.classList.add("hide");
             heroShrink.classList.add("show");
 
         } else if (isShrink && window.scrollY < 120) {
@@ -200,6 +271,7 @@ function shrinkHero() {
             isShrink = false;
 
             hero.classList.remove("hide");
+            menuNav.classList.remove("hide");
             heroShrink.classList.remove("show");
 
         }
