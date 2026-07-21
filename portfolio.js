@@ -42,7 +42,7 @@ const projects = {
         ],
 
         gallery: [
-            { image: "imagens/IMG1.png", text: "Página inicial do site" },
+            { image: "imagens/IMG1.png", text: {pt: "Página inicial do site", en: "Home page"} },
             { image: "imagens/IMG2.png", text: "Sobre o projeto" },
             { image: "imagens/IMG3.png", text: "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." }   
         ],
@@ -56,14 +56,20 @@ const languages = {
     pt:{
         subTitle: "Desenvolvedor Web Júnior",
         subAbout: "Sobre mim",
-        subProject: "Projetos"
+        subProject: "Projetos",
+        h2About: "Sobre mim",
+        pAbout: "Desenvolvedor web com experiência em HTML,CSS, JavaScript e PHP. Atualmente mantenho projetos publicados e em constante evolução.",
+        h2Project: "Projetos"
 
     },
 
     en: {
         subTitle: "Junior Web Developer",
         subAbout: "About me",
-        subProject: "Projects"
+        subProject: "Projects",
+        h2About: "About me",
+        pAbout: "Web developer with experience in HTML, CSS, JavaScript, and PHP. I currently maintain published projects that are constantly evolving.",
+        h2Project: "Projects"
     } 
 };
 //Objeto technologyIcons
@@ -87,6 +93,13 @@ const github = document.getElementById("project-github");
 const subtitle = document.getElementById("languages-p");
 const about = document.querySelectorAll(".about-title");
 const project = document.querySelectorAll(".project-title");
+const h2About = document.getElementById("about-h2");
+const pAbout = document.getElementById("about-p");
+const h2Project = document.getElementById("projects-h2");
+
+let currentLanguage = "pt";
+
+console.log(currentLanguage);
 
 function renderLanguage(language){
 
@@ -94,6 +107,11 @@ function renderLanguage(language){
 
     about.forEach (item => {item.textContent = language.subAbout;});
     project.forEach (item => {item.textContent = language.subProject;});
+
+    h2About.textContent = language.h2About;
+    pAbout.textContent = language.pAbout;
+    h2Project.textContent = language.h2Project;
+    console.log(currentLanguage);
 
 
 }
@@ -105,8 +123,9 @@ document
 
             const id = button.dataset.language;
 
-            renderLanguage(languages[id]);
+            currentLanguage = id;
 
+            renderLanguage(languages[id]);
 
         });
 
@@ -170,7 +189,7 @@ function renderGallery(project) {
     galleryThumbs.innerHTML = "";
 
     preview.src = project.gallery[0].image;
-    previewText.textContent = project.gallery[0].text;
+    previewText.textContent = project.gallery[0].text[currentLanguage];
 
     project.gallery.forEach(item => {
 
@@ -188,7 +207,7 @@ function renderGallery(project) {
             galleryTimer = setTimeout(() => {
 
                 preview.src = item.image;
-                previewText.textContent = item.text;
+                previewText.textContent = item.text[currentLanguage];
 
                 preview.classList.remove("fade");
                 previewText.classList.remove("fade");
