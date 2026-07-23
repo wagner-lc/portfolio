@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", shrinkHero);
 document.addEventListener("DOMContentLoaded", animateSections);
+document.addEventListener("DOMContentLoaded", toggleTheme);
+
+/* ==========================
+   CONSTS
+========================== */
 
 //Projects
 
@@ -72,6 +77,7 @@ const languages = {
         h2Project: "Projects"
     } 
 };
+
 //Objeto technologyIcons
 
 const technologyIcons = {
@@ -101,6 +107,9 @@ let currentLanguage = "pt";
 
 console.log(currentLanguage);
 
+/* ==========================
+   LANGUAGE SWITCH
+========================== */
 function renderLanguage(language){
 
     subtitle.textContent = language.subTitle;
@@ -130,24 +139,58 @@ document
         });
 
     });
+   
+/* ==========================
+   DARK MODE
+========================== */
+function toggleTheme() {
+    const button = document.getElementById("theme-button");
 
-function renderTech(technologies) {
+    button.addEventListener("click",()=>{
 
-    tech.innerHTML = "";
-
-    technologies.forEach(item => {
-
-        const img = document.createElement("img");
-
-        img.src = technologyIcons[item];
-        img.alt = item;
-
-        tech.appendChild(img);
+        document.body.classList.toggle("dark");
+        console.log("Funcionando dark")
     });
-    console.log("renderTech funcionando");
 }
 
+/* ==========================
+   HERO SHRINK
+========================== */
+function shrinkHero() {
 
+    const hero = document.getElementById("hero");
+    const menuNav = document.getElementById("menu-nav")
+    const heroShrink = document.getElementById("hero-shrink");
+
+    let isShrink = false;
+
+    window.addEventListener("scroll", () => {
+
+        if (!isShrink && window.scrollY > 150) {
+
+            isShrink = true;
+
+            hero.classList.add("hide");
+            menuNav.classList.add("hide");
+            heroShrink.classList.add("show");
+
+        } else if (isShrink && window.scrollY < 120) {
+
+            isShrink = false;
+
+            hero.classList.remove("hide");
+            menuNav.classList.remove("hide");
+            heroShrink.classList.remove("show");
+
+        }
+
+    });
+
+}
+
+/* ==========================
+   SECTION PROJECT
+========================== */
 function renderProject(project) {
 
     title.textContent = project.title;
@@ -184,6 +227,28 @@ document.querySelectorAll(".project-card img").forEach(card => {
 
 let galleryTimer;
 
+/* ==========================
+   TECNOLOGIES
+========================== */
+function renderTech(technologies) {
+
+    tech.innerHTML = "";
+
+    technologies.forEach(item => {
+
+        const img = document.createElement("img");
+
+        img.src = technologyIcons[item];
+        img.alt = item;
+
+        tech.appendChild(img);
+    });
+    console.log("renderTech funcionando");
+}
+
+/* ==========================
+   SECTION PROJECT GALLERY
+========================== */
 function renderGallery(project) {
 
     galleryThumbs.innerHTML = "";
@@ -222,7 +287,9 @@ function renderGallery(project) {
 
 }
 
-//Fade geral
+/* ==========================
+   FADE
+========================== */
 function animateProjectParts() {
 
     const parts = document.querySelectorAll('.project-part');
@@ -239,7 +306,10 @@ function animateProjectParts() {
     console.log("animateProjectParts funcionando");
 
 }
-// Fade seções
+
+/* ==========================
+   SECTIONS FADE
+========================== */
 function animateSections() {
 
     const sections = document.querySelectorAll("main section");
@@ -265,36 +335,5 @@ function animateSections() {
     });
 
 }
-//Hero shrink
 
-function shrinkHero() {
 
-    const hero = document.getElementById("hero");
-    const menuNav = document.getElementById("menu-nav")
-    const heroShrink = document.getElementById("hero-shrink");
-
-    let isShrink = false;
-
-    window.addEventListener("scroll", () => {
-
-        if (!isShrink && window.scrollY > 150) {
-
-            isShrink = true;
-
-            hero.classList.add("hide");
-            menuNav.classList.add("hide");
-            heroShrink.classList.add("show");
-
-        } else if (isShrink && window.scrollY < 120) {
-
-            isShrink = false;
-
-            hero.classList.remove("hide");
-            menuNav.classList.remove("hide");
-            heroShrink.classList.remove("show");
-
-        }
-
-    });
-
-}

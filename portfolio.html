@@ -8,56 +8,15 @@
     </head>
     <body>
         
-        <header class="hero" id="hero">
-            <button data-language="pt"></button>
-            <button data-language="en"></button>
-            <img src="imagens/github.png" id="hero-image" alt="Wagner foto">
-
-            <div class="hero-feats">
-                <h1>Wagner Cardoso</h1>
-                <p id="languages-p">Desenvolvedor Web Júnior</p>
-                <div class="hero-links">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/wagner-lc">
-                                <img src="imagens/github.png" title= "GitHub" alt="github logo">
-                                <span>https://github.com/wagner-lc</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/wagnercardoso7/">
-                                <img src="imagens/linkedin.webp" title= "LinkedIn" alt="linkedin logo">
-                                <span>https://www.linkedin.com/in/wagnercardoso7/</span>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="links">
-                                <img src="imagens/outlook.webp" title= "E-mail" alt="e-mail outlook">
-                                <span> wagnerlc07@hotmail.com</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="links" title="Contato">📞 
-                                <span> +351 932 315 890</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="tech">
-                        <img src="imagens/html.webp" title= "HTML" alt="html">
-                        <img src="imagens/css.webp" title= "CSS" alt="css">
-                        <img src="imagens/js.webp" title= "JavaScript" alt="js">
-                        <img src="imagens/php.webp" title= "PHP" alt="php">
-                    </div>
-                </div>
+        <header>
+            <div class="header-controls">
+                <button data-language="pt">PT</button>
+                <button data-language="en">EN</button>
+                <button id="theme-button" onchange = "toggleTheme()">🌙</button>
             </div>
         </header>
-        <nav class="menu-nav" id="menu-nav">
-            <ul>
-                <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
-                <li><a href="#projects" title="Projetos" class="project-title">Projetos</a></li>
-                <li><a href="#formations" title="Formações"></a>Formações</li>
-            </ul>
-        </nav>
+        <div class="divider"></div>
+<!-- Header shrinked-->
         <header class="hero-shrink" id="hero-shrink">
             <div class="hero-feats-shrink">
                 <h1>Wagner Cardoso</h1>
@@ -91,10 +50,67 @@
                         </li>
                     </ul>
                 </div>
+                <div class="header-controls">
+                    <button data-language="pt">PT</button>
+                    <button data-language="en">EN</button>
+                    <button id="theme-button2" onchange = "toggleTheme()">🌙</button>
+                </div>
             </div>
-
         </header>
         <main>
+            <section class="hero" id="hero">
+                <img src="imagens/github.png" id="hero-image" alt="Wagner foto">
+
+                <div class="hero-feats">
+                    <h1>Wagner Cardoso</h1>
+                    <p id="languages-p">Desenvolvedor Web Júnior</p>
+                    <div class="hero-links">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/wagner-lc">
+                                    <img src="imagens/github.png" title= "GitHub" alt="github logo">
+                                    <span>https://github.com/wagner-lc</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/wagnercardoso7/">
+                                    <img src="imagens/linkedin.webp" title= "LinkedIn" alt="linkedin logo">
+                                    <span>https://www.linkedin.com/in/wagnercardoso7/</span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="links">
+                                    <img src="imagens/outlook.webp" title= "E-mail" alt="e-mail outlook">
+                                    <span> wagnerlc07@hotmail.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="links" title="Contato">📞 
+                                    <span> +351 932 315 890</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </section>
+            <div class="divider"></div>
+            <section class="tech">
+                <img src="imagens/html.webp" title= "HTML" alt="html">
+                <img src="imagens/css.webp" title= "CSS" alt="css">
+                <img src="imagens/js.webp" title= "JavaScript" alt="js">
+                <img src="imagens/php.webp" title= "PHP" alt="php">
+                <img src="imagens/mysql.png" title= "MySql" alt="php">
+            </section>
+            <div class="divider"></div>
+            <nav class="menu-nav" id="menu-nav">
+                <ul>
+                    <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
+                    <li><a href="#projects" title="Projetos" class="project-title">Projetos</a></li>
+                    <li><a href="#formations" title="Formações"></a>Formações</li>
+                </ul>
+            </nav>
+
             <section class="about" id="about">
                 <h2 id="about-h2">Sobre Mim</h2>
                 <p id="about-p">
@@ -103,7 +119,7 @@
                     projetos publicados e em constante evolução.
                 </p>
             </section>
-
+            <div class="divider"></div>
             <section id="projects" class="projects">
 
                 <h2 id="projects-h2">Projetos</h2>
