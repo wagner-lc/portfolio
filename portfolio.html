@@ -6,27 +6,21 @@
         <link rel="stylesheet" href="portfolio.css">
         <title>Wagner Cardoso - Portfólio</title>
     </head>
-    <body>
-        
-        <header>
-            <div class="header-controls">
-                <button data-language="pt">PT</button>
-                <button data-language="en">EN</button>
-                <button id="theme-button" onchange = "toggleTheme()">🌙</button>
+    <body>        
+            <div class="site-controls">
+                <button id="language-button" title="Mudar idioma">🌐 PT</button>
+                <button id="theme-button" title="Mudar iluminação">
+                    <span>☀️</span>
+                    <div class="theme-switch">
+                        <div class="theme-ball"></div>
+                    </div>
+                    <span>🌙</span>
+                </button>
             </div>
-        </header>
-        <div class="divider"></div>
-<!-- Header shrinked-->
+<!-- Hero shrinked-->
         <header class="hero-shrink" id="hero-shrink">
+            <h1>Wagner Cardoso</h1>
             <div class="hero-feats-shrink">
-                <h1>Wagner Cardoso</h1>
-                <nav class="menu-nav-shrink">
-                    <ul>
-                        <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
-                        <li><a href="#projects" title="Projetos" class="project-title">Projetos</a></li>
-                        <li><a href="#formations" title="Formações"></a>Formações</li>
-                    </ul>
-                </nav>
                 <div class="hero-links-shrink">
                     <ul>
                         <li>
@@ -41,20 +35,28 @@
                         </li>
                         <li>
                             <div class="links-shrink">
-                                <img src="imagens/outlook.webp" title= "wagnerlc07@hotmail.com" alt="e-mail outlook">
+                                <a href="mailto:wagnerlc07@hotmail.com">
+                                    <img src="imagens/outlook.webp" title= "wagnerlc07@hotmail.com" alt="Email">
+                                </a>
                             </div>
                         </li>
                         <li>
-                            <div class="links-shrink" title="+351 932 315 890">📞 
+                            <div class="links-shrink">
+                                <a href="tel:+351932315890">
+                                    <img src="imagens/telefone.webp" title="+351 932 315 890" alt="Telefone">
+                                </a>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="header-controls">
-                    <button data-language="pt">PT</button>
-                    <button data-language="en">EN</button>
-                    <button id="theme-button2" onchange = "toggleTheme()">🌙</button>
-                </div>
+                <nav class="menu-nav-shrink">
+                    <ul>
+                        <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
+                        <li><a href="#projects" title="Projetos" class="project-title">Projetos</a></li>
+                        <li><a href="#formations" title="Formações"></a>Formações</li>
+                    </ul>
+                </nav>
+
             </div>
         </header>
         <main>
@@ -85,7 +87,8 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="links" title="Contato">📞 
+                                <div class="links">
+                                    <img src="imagens/telefone.webp" title="Contato" alt="telefone de contato"> 
                                     <span> +351 932 315 890</span>
                                 </div>
                             </li>
@@ -94,6 +97,13 @@
                     </div>
                 </div>
             </section>
+            <nav class="menu-nav" id="menu-nav">
+                <ul>
+                    <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
+                    <li><a href="#projects" title="Projetos" class="project-title">Projetos</a></li>
+                    <li><a href="#formations" title="Formações"></a>Formações</li>
+                </ul>
+            </nav>
             <div class="divider"></div>
             <section class="tech">
                 <img src="imagens/html.webp" title= "HTML" alt="html">
@@ -103,14 +113,6 @@
                 <img src="imagens/mysql.png" title= "MySql" alt="php">
             </section>
             <div class="divider"></div>
-            <nav class="menu-nav" id="menu-nav">
-                <ul>
-                    <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
-                    <li><a href="#projects" title="Projetos" class="project-title">Projetos</a></li>
-                    <li><a href="#formations" title="Formações"></a>Formações</li>
-                </ul>
-            </nav>
-
             <section class="about" id="about">
                 <h2 id="about-h2">Sobre Mim</h2>
                 <p id="about-p">
@@ -153,6 +155,8 @@
 
                 </section>
             </section>
+        <div class="divider"></div>
+
         </main>
         
     </body>

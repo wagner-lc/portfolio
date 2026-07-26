@@ -104,6 +104,7 @@ const pAbout = document.getElementById("about-p");
 const h2Project = document.getElementById("projects-h2");
 
 let currentLanguage = "pt";
+const languageButton =document.getElementById("language-button");
 
 console.log(currentLanguage);
 
@@ -112,6 +113,7 @@ console.log(currentLanguage);
 ========================== */
 function renderLanguage(language){
 
+    
     subtitle.textContent = language.subTitle;
 
     about.forEach (item => {item.textContent = language.subAbout;});
@@ -120,25 +122,28 @@ function renderLanguage(language){
     h2About.textContent = language.h2About;
     pAbout.textContent = language.pAbout;
     h2Project.textContent = language.h2Project;
-    console.log(currentLanguage);
 
 
 }
-document
-    .querySelectorAll("[data-language]")
-    .forEach(button => {
+    languageButton.addEventListener("click", () => {
 
-        button.addEventListener("click", () => {
+    if(currentLanguage === "pt"){
 
-            const id = button.dataset.language;
+        currentLanguage = "en";
 
-            currentLanguage = id;
+    }else{
 
-            renderLanguage(languages[id]);
+        currentLanguage = "pt";
 
-        });
+    }
 
-    });
+    languageButton.textContent =
+        "🌐 " + currentLanguage.toUpperCase();
+
+    renderLanguage(languages[currentLanguage]);
+
+});
+
    
 /* ==========================
    DARK MODE
@@ -337,3 +342,11 @@ function animateSections() {
 }
 
 
+/*Next
+
+* Mudar idioma titles
+
+
+
+
+*/
