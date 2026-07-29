@@ -178,7 +178,9 @@ main{
 /* ==========================
   CONTROLS
 ========================== */
-
+.floating-settings{
+  display: none;
+}
 .site-controls{
 
   position:fixed;
@@ -543,7 +545,7 @@ section.show{
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 16px;
+  margin: 4rem
 }
 
 #project-tech  img {
@@ -570,7 +572,7 @@ section.show{
 
 .project-card img {
   width: 10rem;
-  height: 10rem;
+  height: auto;
   object-fit: contain;
   justify-content: space-between;
   display: flex;
@@ -580,7 +582,7 @@ section.show{
   margin: 1rem;
   cursor: pointer;
   box-shadow: 0 0 10px var(--cor-borda-box);
-  
+  aspect-ratio: 1;
 }
 
 #project-gallery{
@@ -700,8 +702,69 @@ section.show{
 
 /* MOBILE */
 @media (max-width: 768px) {
+/*---------- SETTINGS --------------*/
+.site-controls {
+  display: none;
+}
 
-/*Shrink*/ 
+.floating-settings{
+  border: solid red;
+  bottom: 10rem;
+  position: fixed;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: 1000;
+}
+.settings-toggle{
+  border: white;
+  background-color: #222;
+  border-radius: 50%;
+  aspect-ratio: 1;
+
+  width: 3rem;
+  opacity: 0.3;
+}
+
+.settings-menu{
+
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+
+  margin-bottom:.5rem;
+
+  opacity:0;
+  transform:translateY(20px);
+
+  pointer-events:none;
+
+  transition:.9s;
+
+}
+
+.settings-menu.show{
+
+  opacity:1;
+  transform:translateY(-1rem);
+  gap: 1rem;
+  pointer-events:auto;
+
+}
+
+#language-button, #theme-button{
+  border: white;
+  background-color: #222;
+  color: white;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  
+  justify-content: center;
+  opacity: 0.3;
+}
+
+
+/*--------- Shrink --------------*/ 
 #hero-shrink{
 
   position: fixed;
@@ -787,6 +850,11 @@ section.show{
 
 .hero-links a span, .links span{
   display: none;
+}
+
+.hero:not(.shrink) .hero-links a:hover,
+.hero:not(.shrink) .links:hover {
+  width: 0;
 }
 /*Galeria*/
 

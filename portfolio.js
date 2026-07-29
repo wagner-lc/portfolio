@@ -104,15 +104,13 @@ const pAbout = document.getElementById("about-p");
 const h2Project = document.getElementById("projects-h2");
 
 let currentLanguage = "pt";
-const languageButton =document.getElementById("language-button");
 
-console.log(currentLanguage);
+const languageButton = document.querySelectorAll(".language-button");
 
 /* ==========================
    LANGUAGE SWITCH
 ========================== */
 function renderLanguage(language){
-
     
     subtitle.textContent = language.subTitle;
 
@@ -125,39 +123,65 @@ function renderLanguage(language){
 
 
 }
-    languageButton.addEventListener("click", () => {
 
-    if(currentLanguage === "pt"){
+document.querySelectorAll(".language-button").forEach(button => {
+    button.addEventListener("click", () => {
 
-        currentLanguage = "en";
+        if(currentLanguage === "en"){
 
-    }else{
+            currentLanguage = "pt";
 
-        currentLanguage = "pt";
+        }else{
 
-    }
+            currentLanguage = "en";
 
-    languageButton.textContent =
-        "🌐 " + currentLanguage.toUpperCase();
+        }
 
-    renderLanguage(languages[currentLanguage]);
+        updateLanguageButtons();
 
+        renderLanguage(languages[currentLanguage]);
+
+    });
 });
 
+function updateLanguageButtons(){
+
+    languageButton.forEach(button => {
+
+        button.textContent =
+            currentLanguage.toUpperCase();
+
+    });
+
+}
    
 /* ==========================
    DARK MODE
 ========================== */
 function toggleTheme() {
-    const button = document.getElementById("theme-button");
 
-    button.addEventListener("click",()=>{
+    document.querySelectorAll(".theme-button").forEach(button => {
 
-        document.body.classList.toggle("dark");
-        console.log("Funcionando dark")
+        button.addEventListener("click",()=>{
+
+            document.body.classList.toggle("dark");
+            updateThemeButtons();
+        });
     });
 }
 
+function updateThemeButtons() {
+
+    document.querySelectorAll(".theme-mobile").forEach(button => {
+
+        button.textContent =
+            document.body.classList.contains("dark")
+                ? "☀️"
+                : "🌙";
+
+    });
+
+}
 /* ==========================
    HERO SHRINK
 ========================== */
@@ -341,6 +365,18 @@ function animateSections() {
 
 }
 
+/* ==========================
+   SETTINGS BUTTONS
+========================== */
+
+const button = document.getElementById("settings-toggle");
+const settings = document.getElementById("settings-menu");
+
+button.addEventListener("click", () => {
+
+    settings.classList.toggle("show");
+
+});
 
 /*Next
 

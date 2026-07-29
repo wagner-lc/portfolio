@@ -8,8 +8,8 @@
     </head>
     <body>        
             <div class="site-controls">
-                <button id="language-button" title="Mudar idioma">🌐 PT</button>
-                <button id="theme-button" title="Mudar iluminação">
+                <button id="language-button" class="language-button" title="Mudar idioma">PT</button>
+                <button id="theme-button" class="theme-button theme-desktop" title="Mudar iluminação">
                     <span>☀️</span>
                     <div class="theme-switch">
                         <div class="theme-ball"></div>
@@ -43,7 +43,7 @@
                         <li>
                             <div class="links-shrink">
                                 <a href="tel:+351932315890">
-                                    <img src="imagens/telefone.webp" title="+351 932 315 890" alt="Telefone">
+                                    <img src="imagens/telefone.png" title="+351 932 315 890" alt="Telefone">
                                 </a>
                             </div>
                         </li>
@@ -82,21 +82,31 @@
                             </li>
                             <li>
                                 <div class="links">
+                                    <a href="mailto:wagnerlc07@hotmail.com"></a>
                                     <img src="imagens/outlook.webp" title= "E-mail" alt="e-mail outlook">
                                     <span> wagnerlc07@hotmail.com</span>
                                 </div>
                             </li>
                             <li>
-                                <div class="links">
-                                    <img src="imagens/telefone.webp" title="Contato" alt="telefone de contato"> 
+                                <div class="links" id="gatmanImage">
+                                    <a href="tel:+351932315890"></a>
+                                    <img src="imagens/telefone.png" title="Contato" alt="telefone de contato"> 
                                     <span> +351 932 315 890</span>
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </section>
+            <!--Menu flutuante mobile-->
+            <div class="floating-settings">
+                <button id="settings-toggle" class="settings-toggle">⚙️</button>
+                <div id="settings-menu" class="settings-menu">
+                    <button id="language-button" class="language-button">PT</button>
+                    <button id="theme-button" class="theme-button theme-mobile">🌙</button>
+                </div>
+            </div>
+
             <nav class="menu-nav" id="menu-nav">
                 <ul>
                     <li><a href="#about" title="Sobre mim" class="about-title">Sobre mim</a></li>
