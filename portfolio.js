@@ -25,9 +25,89 @@ const projects = {
         ],
 
         gallery: [
-            { image: "imagens/html.webp", text: "Página inicial do site" },
-            { image: "imagens/IMG1.png", text: "Sobre o projeto" },
-            { image: "imagens/IMG3.png", text: "Contato" }
+        {
+            image: "imagens/gatman-home.png",
+            title: {
+                pt: "Página inicial",
+                en: "Home page"
+            },
+            text: {
+                pt: "Permite registar e acompanhar manutenções organizadas por estado (pendentes ou finalizadas), além de definir prioridade, lembretes com temporizador e repetição diária.",
+                en: "Allows maintenance tasks to be registered and tracked by status (pending or completed), with support for priorities, reminders, timers and daily recurrence."
+            }
+        },
+
+        {
+            image: "imagens/gatman-inspecao.png",
+            title: {
+                pt: "Inspeção de quartos",
+                en: "Room inspection"
+            },
+            text: {
+                pt: "Permite registar a inspeção diária dos quartos, atualizando o estado de cada item em tempo real e como todo o site é possível alternar entre os temas claro e escuro da aplicação.",
+                en: "Allows daily room inspections with real-time updates for each inspection item, as all website supports switching between light and dark application themes ."
+            }
+        },
+
+        {
+            image: "imagens/gatman-selecao.png",
+            title: {
+                pt: "Seleção de quartos",
+                en: "Room selection"
+            },
+            text: {
+                pt: "Utilizada em diferentes módulos para permitir uma seleção rápida e intuitiva dos quartos.",
+                en: "Used across multiple modules to provide quick and intuitive room selection."
+            }
+        },
+
+        {
+            image: "imagens/gatman-graficos.png",
+            title: {
+                pt: "Gráficos",
+                en: "Charts"
+            },
+            text: {
+                pt: "Permite visualizar gráficos e filtrar os quartos de acordo com diferentes critérios para facilitar a análise das informações.",
+                en: "Displays charts with filtering options, making room information easier to analyse."
+            }
+        },
+
+        {
+            image: "imagens/gatman-logs.png",
+            title: {
+                pt: "Logs do sistema",
+                en: "System logs"
+            },
+            text: {
+                pt: "Apresenta o histórico de ações realizadas pelos utilizadores para facilitar a auditoria e o acompanhamento das alterações.",
+                en: "Displays the history of user actions, making auditing and change tracking easier."
+            }
+        },
+
+        {
+            image: "imagens/gatman-galeria.png",
+            title: {
+                pt: "Galeria",
+                en: "Gallery"
+            },
+            text: {
+                pt: "Permite documentar as manutenções através de fotografias de Antes e Depois, organizadas numa galeria de consulta rápida.",
+                en: "Documents maintenance work using Before and After photos organised in an easy-to-browse gallery."
+            }
+        },
+
+        {
+            image: "imagens/gatman-extintores.png",
+            title: {
+                pt: "Gestão de extintores",
+                en: "Fire extinguisher management"
+            },
+            text: {
+                pt: "Permite editar diretamente as informações dos extintores numa tabela semelhante ao Excel.",
+                en: "Allows fire extinguisher information to be edited directly in an Excel-like table."
+            }
+        }
         ],
 
         site: 'https://gatman.rf.gd',
@@ -47,9 +127,65 @@ const projects = {
         ],
 
         gallery: [
-            { image: "imagens/IMG1.png", text: {pt: "Página inicial do site", en: "Home page"} },
-            { image: "imagens/IMG2.png", text: "Sobre o projeto" },
-            { image: "imagens/IMG3.png", text: "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." }   
+        {
+            image: "imagens/wk-choose.png",
+            title: {
+                pt: "Choose Your Fighter",
+                en: "Choose Your Fighter"
+            },
+            text: {
+                pt: "Tela inspirada na seleção de personagens do jogo original. Ao selecionar um lutador, o utilizador é encaminhado para a página correspondente com transições e efeitos personalizados.",
+                en: "Character selection screen inspired by the original game. Selecting a fighter takes the user to the corresponding page with custom transitions and effects."
+            }
+        },
+
+        {
+            image: "imagens/wk-arenas.png",
+            title: {
+                pt: "Arenas",
+                en: "Arenas"
+            },
+            text: {
+                pt: "Permite explorar as arenas do jogo com imagens, efeitos sonoros e músicas originais, proporcionando uma experiência mais imersiva.",
+                en: "Explore the game's arenas with images, sound effects and original music for a more immersive experience."
+            }
+        },
+
+        {
+            image: "imagens/wk-hero.png",
+            title: {
+                pt: "Página dos jogos",
+                en: "Game pages"
+            },
+            text: {
+                pt: "Cada jogo possui uma página dedicada com identidade visual própria, navegação responsiva e sons originais.",
+                en: "Each game has its own dedicated page featuring a unique visual identity, responsive navigation and original sound effects."
+            }
+        },
+
+        {
+            image: "imagens/wk-history.png",
+            title: {
+                pt: "História",
+                en: "Story"
+            },
+            text: {
+                pt: "Apresenta a introdução do jogo através de um slideshow inspirado na versão original, recriando a atmosfera clássica da série.",
+                en: "Presents the game's introduction through a slideshow inspired by the original version, recreating the classic atmosphere."
+            }
+        },
+
+        {
+            image: "imagens/wk-galeria.png",
+            title: {
+                pt: "Galeria",
+                en: "Gallery"
+            },
+            text: {
+                pt: "Galeria organizada com imagens dos jogos, efeitos de transição e sistema de pré-visualização para facilitar a navegação entre os conteúdos.",
+                en: "Organized gallery featuring game artwork, transition effects and an image preview system for easier navigation."
+            }
+        }
         ],
 
         site: 'https://wortalkombat.netlify.app',
@@ -63,8 +199,18 @@ const languages = {
         subAbout: "Sobre mim",
         subProject: "Projetos",
         h2About: "Sobre mim",
-        pAbout: "Desenvolvedor web com experiência em HTML,CSS, JavaScript e PHP. Atualmente mantenho projetos publicados e em constante evolução.",
-        h2Project: "Projetos"
+        pAbout: "Desenvolvedor Web Júnior com experiência em HTML, CSS, JavaScript, PHP e MySQL. Desenvolvo aplicações web completas, desde a interface até a integração com banco de dados. Atualmente mantenho projetos publicados e em constante evolução, aplicando boas práticas de desenvolvimento e buscando aprimorar continuamente minhas habilidades.",
+        h2Project: "Projetos",
+        techTitle: "Tecnologias utilizadas",
+        h2Formation: "Formação",
+        formationText:
+            "• Engenharia Mecânica - Universidade Anhanguera - São Paulo/SP (2017)\n" +
+            "• Técnico em Segurança do Trabalho - Centro Paula Souza São Paulo/SP (2011) \n" +
+            "• Cursos online de HTML, CSS, JavaScript - Udemy\n" +
+            "• Aprendizado contínuo por meio de projetos próprios e documentação oficial.\n\n" + 
+
+            "Atualmente continuo a desenvolver as minhas competências através de cursos online, documentação oficial e projetos práticos, aplicando os conhecimentos diretamente em aplicações reais.\n" +
+            "Estou em transição para a área de desenvolvimento web, com foco em Front-end e Back-end utilizando tecnologias modernas e aprendizagem contínua."
 
     },
 
@@ -73,9 +219,21 @@ const languages = {
         subAbout: "About me",
         subProject: "Projects",
         h2About: "About me",
-        pAbout: "Web developer with experience in HTML, CSS, JavaScript, and PHP. I currently maintain published projects that are constantly evolving.",
-        h2Project: "Projects"
-    } 
+        pAbout: "Junior Web Developer with experience in HTML, CSS, JavaScript, PHP, MySQL, and Git. I develop complete web applications, from user interfaces to database integration. I currently maintain published projects that are continuously evolving, applying good development practices while constantly improving my technical skills.",
+        h2Project: "Projects",
+        techTitle: "Tecnologies used",
+        h2Formation: "Education",
+        formationText:
+            "• Mechanical Engineering - Universidade Anhanguera - São Paulo/SP (2017)\n" +
+            "• Occupational Safety Technician - Centro Paula Souza São Paulo/SP (2011) \n" +
+            "• Online courses in HTML, CSS, JavaScript, PHP, MySQL and Git\n" +
+            "• Continuous learning through personal projects and official documentation.\n\n" +
+
+            "I continuously improve my web development skills through online courses, official documentation and hands-on projects, applying new knowledge to real-world applications.\n" +
+            "Currently transitioning into Web Development, focusing on Front-end and Back-end technologies through continuous learning and practical projects."
+
+    
+    }, 
 };
 
 //Objeto technologyIcons
@@ -85,7 +243,8 @@ const technologyIcons = {
     'CSS': 'imagens/css.webp',
     'JavaScript': 'imagens/js.webp',
     'PHP': 'imagens/php.webp',
-    'MySQL': 'imagens/mysql.png'
+    'MySQL': 'imagens/mysql.png',
+    'Git': 'imagens/git.png'
 };
 
 const title = document.getElementById("project-title");
@@ -102,6 +261,10 @@ const project = document.querySelectorAll(".project-title");
 const h2About = document.getElementById("about-h2");
 const pAbout = document.getElementById("about-p");
 const h2Project = document.getElementById("projects-h2");
+const techTitle = document.getElementById("tech-title");
+
+const h2Formation = document.getElementById("formation-h2");
+const formationText = document.getElementById("formation-text");
 
 let currentLanguage = "pt";
 
@@ -120,6 +283,10 @@ function renderLanguage(language){
     h2About.textContent = language.h2About;
     pAbout.textContent = language.pAbout;
     h2Project.textContent = language.h2Project;
+    techTitle.textContent = language.techTitle;
+
+    h2Formation.textContent = language.h2Formation;
+    formationText.innerText = language.formationText;
 
 
 }
@@ -253,6 +420,7 @@ document.querySelectorAll(".project-card img").forEach(card => {
     const galleryThumbs = document.getElementById("gallery-thumbs");
     const preview = document.getElementById("gallery-preview");
     const previewText = document.getElementById("gallery-preview-text");
+    const previewTitle = document.getElementById("gallery-preview-title");
 
 let galleryTimer;
 
@@ -283,6 +451,7 @@ function renderGallery(project) {
     galleryThumbs.innerHTML = "";
 
     preview.src = project.gallery[0].image;
+    previewTitle.textContent = project.gallery[0].title[currentLanguage];
     previewText.textContent = project.gallery[0].text[currentLanguage];
 
     project.gallery.forEach(item => {
@@ -296,14 +465,17 @@ function renderGallery(project) {
             clearTimeout(galleryTimer);
 
             preview.classList.add("fade");
+            previewTitle.classList.add("fade");
             previewText.classList.add("fade");
 
             galleryTimer = setTimeout(() => {
 
                 preview.src = item.image;
+                previewTitle.textContent = item.title[currentLanguage];
                 previewText.textContent = item.text[currentLanguage];
 
                 preview.classList.remove("fade");
+                previewTitle.classList.remove("fade");
                 previewText.classList.remove("fade");
 
             }, 450);
@@ -352,7 +524,6 @@ function animateSections() {
                 entry.target.classList.add("show");
 
             }
-
         });
 
     }, {
@@ -378,6 +549,7 @@ button.addEventListener("click", () => {
 
 });
 
+renderLanguage(languages[currentLanguage]);
 /*Next
 
 * Mudar idioma titles

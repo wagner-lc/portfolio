@@ -27,6 +27,9 @@
   --cor-erro: #dc3545;
   --cor-aviso: #eab308;
 
+  --cor-white-black: white;
+  --cor-black-white: black;
+
 /* ==========================
     Layout
 ========================== */
@@ -100,6 +103,11 @@
   --transition: .3s ease;
   --transition-slow: .5s ease;
 
+  /* ==========================
+    Opacidade
+========================== */
+
+  --opacidade-button: 0.3;
 }
 
 body.dark {
@@ -123,8 +131,10 @@ body.dark {
   --cor-sucesso: #3ab826;
   --cor-erro: #dc3545;
   --cor-aviso: #eab308;
-
-
+  --cor-white-black: black;
+  --cor-black-white: white;
+  
+  --opacidade-button: 1;
 }
 /* ==========================
    BODY / LAYOUT
@@ -611,6 +621,10 @@ section.show{
 
 
 }
+.gallery-title-text{
+  display: flex;
+  flex-direction: column;
+}
 
 #gallery-preview-text{
   margin-top: 8px;
@@ -639,6 +653,11 @@ section.show{
   font-size: large;
   text-align: center;
   width: 40%;
+}
+h4 {
+  font-size: var(--font-subtitle);
+  display: flex;
+  justify-content: center;
 }
 .fade {
   opacity: 0 !important;
@@ -691,15 +710,32 @@ section.show{
   opacity: 0;
   transform: translateY(20px);
 }
-
+#tech-title {
+  justify-content: center;
+  display: flex;
+  margin-top: 2rem;
+}
 .project-part.show {
   opacity: 1;
   transform: translateY(0);
   transition:
-      opacity .6s ease,
-      transform .6s ease;
+    opacity .6s ease,
+    transform .6s ease;
+}
+.formations{
+  margin-bottom: 6rem;
 }
 
+#formation-text{
+  justify-content: center;
+  display: flex;
+  padding: 2rem;
+}
+
+footer{
+  justify-content: center;
+  display: flex;
+}
 /* MOBILE */
 @media (max-width: 768px) {
 /*---------- SETTINGS --------------*/
@@ -708,7 +744,6 @@ section.show{
 }
 
 .floating-settings{
-  border: solid red;
   bottom: 10rem;
   position: fixed;
   right: 1.5rem;
@@ -716,14 +751,16 @@ section.show{
   flex-direction: column-reverse;
   z-index: 1000;
 }
-.settings-toggle{
+
+.settings-toggle, #language-button, #theme-button{
   border: white;
-  background-color: #222;
+  background-color: var(--cor-black-white);
   border-radius: 50%;
   aspect-ratio: 1;
-
+  color: var(--cor-white-black);
+  justify-content: center;
   width: 3rem;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .settings-menu{
@@ -752,16 +789,7 @@ section.show{
 
 }
 
-#language-button, #theme-button{
-  border: white;
-  background-color: #222;
-  color: white;
-  border-radius: 50%;
-  aspect-ratio: 1;
-  
-  justify-content: center;
-  opacity: 0.3;
-}
+
 
 
 /*--------- Shrink --------------*/ 
