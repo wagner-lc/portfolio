@@ -524,6 +524,7 @@ section{
   text-align: justify;
   padding-block: var(--section-spacing);
   opacity:0;
+  line-height: var(--line-height);
 
   transform:translateY(30px);
   transition:.6s ease;
@@ -542,13 +543,15 @@ section.show{
   max-width: 600px;
   height: auto;
   display: block;
-  
+  white-space: pre-line;
 }
 
 #project-description {
   margin-top: 16px;
   text-align: center;
   font-size: 1.2rem;
+  margin-bottom: 2rem;
+
 }
 
 #project-tech {
@@ -710,11 +713,13 @@ h4 {
   opacity: 0;
   transform: translateY(20px);
 }
+
 #tech-title {
   justify-content: center;
   display: flex;
   margin-top: 2rem;
 }
+
 .project-part.show {
   opacity: 1;
   transform: translateY(0);
@@ -722,6 +727,7 @@ h4 {
     opacity .6s ease,
     transform .6s ease;
 }
+
 .formations{
   margin-bottom: 6rem;
 }
@@ -736,6 +742,7 @@ footer{
   justify-content: center;
   display: flex;
 }
+
 /* MOBILE */
 @media (max-width: 768px) {
 /*---------- SETTINGS --------------*/

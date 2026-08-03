@@ -12,7 +12,12 @@ const projects = {
 
     gatman: {
         title: "GatMan",
-        //description: "Sistema interno de manutenção hoteleira com gestão de ocorrências, quartos e galerias.",
+        description: {
+            pt:"Sistema interno de gestão de manutenção hoteleira com controle de ocorrências, inspeções, status de quartos em tempo real e galeria de fotos.\n\n" +
+            "⚠️ A versão apresentada neste portfólio utiliza dados fictícios para preservar a confidencialidade das informações. O sistema original encontra-se em ambiente de produção e é utilizado diariamente.",
+            en: "Internal hotel maintenance management system featuring work order tracking, inspections, real-time room status, and a photo gallery.\n" + 
+            "⚠️ The version presented in this portfolio uses fictional data to preserve the confidentiality of the original application. The original system currently is used in production daily. "
+        },
 
         //image: "imagens/gatman.jpeg",
 
@@ -38,7 +43,7 @@ const projects = {
         },
 
         {
-            image: "imagens/gatman-inspecao.png",
+            image: "imagens/gatman-inspecoes.png",
             title: {
                 pt: "Inspeção de quartos",
                 en: "Room inspection"
@@ -116,8 +121,11 @@ const projects = {
 
     wortalkombat: {
         title: "Wortal Kombat",
-        //description: "Portal dedicado à franquia Mortal Kombat com centenas de páginas de conteúdo.",
-
+        description: 
+            {
+            pt: "Fan-site dedicado à trilogia clássica de Mortal Kombat, com biografias completas dos personagens, arenas, áudios, curiosidades e conteúdo interativo.",
+            en: "Fan site dedicated to the classic Mortal Kombat trilogy, featuring complete character biographies, arenas, audio effects, trivia, and interactive content."
+        },
         //image: "imagens/wortal-kombat.png",
 
         tech: [
@@ -152,26 +160,38 @@ const projects = {
         },
 
         {
-            image: "imagens/wk-hero.png",
+            image: "imagens/wk-responsivo.png",
             title: {
-                pt: "Página dos jogos",
-                en: "Game pages"
+                pt: "Responsividade",
+                en: "Responsive Design"
             },
             text: {
-                pt: "Cada jogo possui uma página dedicada com identidade visual própria, navegação responsiva e sons originais.",
-                en: "Each game has its own dedicated page featuring a unique visual identity, responsive navigation and original sound effects."
+                pt: "O site é totalmente responsivo e adapta a interface para diferentes tamanhos de ecrã. No mobile, o menu é reposicionado para a parte inferior, facilitando a navegação com uma mão.",
+                en: "The website is fully responsive and adapts its layout to different screen sizes. On mobile devices, the navigation menu is moved to the bottom for easier one-handed use."
             }
         },
 
         {
-            image: "imagens/wk-history.png",
+            image: "imagens/wk-bio.jpg",
             title: {
-                pt: "História",
-                en: "Story"
+                pt: "Biografia dos personagens",
+                en: "Character biographies"
             },
             text: {
-                pt: "Apresenta a introdução do jogo através de um slideshow inspirado na versão original, recriando a atmosfera clássica da série.",
-                en: "Presents the game's introduction through a slideshow inspired by the original version, recreating the classic atmosphere."
+                pt: "Cada personagem possui uma página dedicada com biografia, imagens, GIFs e efeitos sonoros, recriando a atmosfera clássica da trilogia original.",
+                en: "Each character has a dedicated page featuring a biography, images, GIFs, and sound effects, recreating the atmosphere of the original trilogy."
+            }
+        },
+
+        {
+            image: "imagens/wk-dropdown.jpg",
+            title: {
+                pt: "Menus e interatividade",
+                en: "Navigation and interactivity"
+            },
+            text: {
+                pt: "Ao rolar a página, o cabeçalho é reduzido para ampliar a área de visualização. O site também conta com menus dropdown, sons on/off, botão de retorno ao topo e outros recursos para melhorar a navegação.",
+                en: "As the user scrolls, the header shrinks to maximize the viewing area. The site also features dropdown menus, sounds effects on/off, a back-to-top button, and other interactive navigation features."
             }
         },
 
@@ -202,7 +222,7 @@ const languages = {
         pAbout: "Desenvolvedor Web Júnior com experiência em HTML, CSS, JavaScript, PHP e MySQL. Desenvolvo aplicações web completas, desde a interface até a integração com banco de dados. Atualmente mantenho projetos publicados e em constante evolução, aplicando boas práticas de desenvolvimento e buscando aprimorar continuamente minhas habilidades.",
         h2Project: "Projetos",
         techTitle: "Tecnologias utilizadas",
-        h2Formation: "Formação",
+        h2Formation: "Formações",
         formationText:
             "• Engenharia Mecânica - Universidade Anhanguera - São Paulo/SP (2017)\n" +
             "• Técnico em Segurança do Trabalho - Centro Paula Souza São Paulo/SP (2011) \n" +
@@ -261,54 +281,55 @@ const project = document.querySelectorAll(".project-title");
 const h2About = document.getElementById("about-h2");
 const pAbout = document.getElementById("about-p");
 const h2Project = document.getElementById("projects-h2");
+const description = document.getElementById("project-description");
 const techTitle = document.getElementById("tech-title");
 
 const h2Formation = document.getElementById("formation-h2");
 const formationText = document.getElementById("formation-text");
 
 let currentLanguage = "pt";
-
+let currentProject = projects.gatman; // projeto inicial
 const languageButton = document.querySelectorAll(".language-button");
 
 /* ==========================
    LANGUAGE SWITCH
 ========================== */
 function renderLanguage(language){
-    
+
     subtitle.textContent = language.subTitle;
 
-    about.forEach (item => {item.textContent = language.subAbout;});
-    project.forEach (item => {item.textContent = language.subProject;});
+    about.forEach(item => item.textContent = language.subAbout);
+    project.forEach(item => item.textContent = language.subProject);
 
     h2About.textContent = language.h2About;
     pAbout.textContent = language.pAbout;
+
     h2Project.textContent = language.h2Project;
     techTitle.textContent = language.techTitle;
 
     h2Formation.textContent = language.h2Formation;
     formationText.innerText = language.formationText;
 
+    // Atualiza o projeto aberto
+    renderProject(currentProject);
 
 }
 
 document.querySelectorAll(".language-button").forEach(button => {
+
     button.addEventListener("click", () => {
 
-        if(currentLanguage === "en"){
-
-            currentLanguage = "pt";
-
-        }else{
-
-            currentLanguage = "en";
-
-        }
+        currentLanguage =
+            currentLanguage === "pt"
+            ? "en"
+            : "pt";
 
         updateLanguageButtons();
 
         renderLanguage(languages[currentLanguage]);
 
     });
+
 });
 
 function updateLanguageButtons(){
@@ -389,12 +410,10 @@ function shrinkHero() {
 ========================== */
 function renderProject(project) {
 
+    currentProject = project;
+
     title.textContent = project.title;
-
-    /*image.src = project.image;
-    image.alt = project.title;
-
-    description.textContent = project.description;*/
+    description.textContent = project.description[currentLanguage];
 
     site.href = project.site;
     github.href = project.github;
@@ -407,15 +426,16 @@ function renderProject(project) {
 }
 
 document.querySelectorAll(".project-card img").forEach(card => {
-        card.addEventListener("click", () => {
 
-            const id = card.dataset.project;
+    card.addEventListener("click", () => {
 
-            renderProject(projects[id]);
-        });
+        const id = card.dataset.project;
+
+        renderProject(projects[id]);
 
     });
 
+});    
     const projectGallery = document.getElementById("project-gallery");
     const galleryThumbs = document.getElementById("gallery-thumbs");
     const preview = document.getElementById("gallery-preview");
