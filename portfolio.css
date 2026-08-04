@@ -271,7 +271,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-md);
   background-color: var(--cor-fundo);
   width: 100%;
   max-width: 100%;
@@ -283,8 +282,7 @@ header {
   
 }
 #hero-image{
-  border: solid 2px yellow;
-  width: 30%;
+  width: 25%;
   aspect-ratio: 1;
   border-radius: 10%;
   background-color: var(--cor-fundo-soft);
