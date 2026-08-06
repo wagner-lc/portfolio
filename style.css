@@ -667,14 +667,25 @@ h4 {
 
 #gallery-thumbs{
   display: flex;
-  gap: 8px;
   justify-content: center;
   align-items: center;
   margin-top: 16px;
 
+  overflow-x: auto;
+  gap: .7rem;
+
+  scrollbar-width: none; /* Firefox */
+  scroll-snap-type:x mandatory;
+
 }
 
+.gallery-thumbs::-webkit-scrollbar{
+    display:none;
+}
+
+
 #gallery-thumbs img {
+  flex:0 0 auto;
   width: 6rem;
   height: 4rem;
   object-fit: contain;
@@ -682,6 +693,7 @@ h4 {
   border: solid 0.5px;
   border-radius: 10px;
   box-shadow: 0 0 10px var(--cor-borda-box);
+  scroll-snap-align:center;
 }
 
 #gallery-thumbs p {
