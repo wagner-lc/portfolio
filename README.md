@@ -64,7 +64,7 @@ LinkedIn:
 (https://www.linkedin.com/in/wagnercardoso7/)
 
 GitHub:
-(--)
+(https://github.com/wagner-lc)
 
 Email:
 (wagnerlc07@hotmail.com)
